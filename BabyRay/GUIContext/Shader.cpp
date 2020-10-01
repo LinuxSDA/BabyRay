@@ -112,9 +112,27 @@ void Shader::Bind() const
     GLCall(glUseProgram(mRendererId));
 }
 
+void Shader::PrepareTexture()
+{
+    Bind();
+    
+    for(int slot = 0; slot < mTextures.size(); ++slot)
+    {
+        mTextures[slot].Bind();
+        const std::string& texPath = mTextures[slot].GetTexturePath();
+        SetUniform1i(mTexturePathToUniform.at(texPath).c_str(), slot);
+    }
+}
+
 void Shader::Unbind() const
 {
     GLCall(glUseProgram(0));
+}
+
+void Shader::SetTexture(const std::string& mTexturePath, const std::string& mTextureUniform)
+{
+    mTexturePathToUniform[mTexturePath] = mTextureUniform;
+    mTextures.emplace_back(mTexturePath);
 }
 
 void Shader::SetUniform1i(const std::string& name, int v0)

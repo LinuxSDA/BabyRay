@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		72B2D222251B332C00EF9D4E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B2D221251B332C00EF9D4E /* main.cpp */; };
+		72AAF28D252645F9002F629C /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72AAF28B252645F9002F629C /* Texture.cpp */; };
+		72AAF29025264DBA002F629C /* stb_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72AAF28F25264DBA002F629C /* stb_image.cpp */; };
 		72B2D230251B33C000EF9D4E /* ErrorHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B2D223251B33C000EF9D4E /* ErrorHandler.cpp */; };
 		72B2D231251B33C000EF9D4E /* IndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B2D224251B33C000EF9D4E /* IndexBuffer.cpp */; };
 		72B2D232251B33C000EF9D4E /* VertexArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B2D227251B33C000EF9D4E /* VertexArray.cpp */; };
 		72B2D233251B33C000EF9D4E /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B2D228251B33C000EF9D4E /* Shader.cpp */; };
 		72B2D234251B33C000EF9D4E /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B2D22A251B33C000EF9D4E /* Renderer.cpp */; };
 		72B2D235251B33C000EF9D4E /* VertexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B2D22F251B33C000EF9D4E /* VertexBuffer.cpp */; };
-		72B2D238251B33EE00EF9D4E /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B2D237251B33E200EF9D4E /* libGLEW.a */; };
-		72B2D23A251B340100EF9D4E /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B2D239251B33F900EF9D4E /* libglfw3.a */; };
 		72B2D23C251B340F00EF9D4E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B2D23B251B340F00EF9D4E /* OpenGL.framework */; };
 		72B2D23E251B341300EF9D4E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B2D23D251B341300EF9D4E /* Cocoa.framework */; };
 		72B2D240251B341B00EF9D4E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B2D23F251B341B00EF9D4E /* IOKit.framework */; };
 		72B2D242251B342800EF9D4E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B2D241251B342800EF9D4E /* CoreVideo.framework */; };
+		72B2D267251FC6C800EF9D4E /* libGLEW.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B2D266251FC6B600EF9D4E /* libGLEW.a */; };
+		72B2D269251FC6E100EF9D4E /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B2D268251FC6D600EF9D4E /* libglfw3.a */; };
+		72B2D26F251FCC1400EF9D4E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B2D26D251FCC1400EF9D4E /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,29 +37,33 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		72AAF28B252645F9002F629C /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		72AAF28C252645F9002F629C /* Texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
+		72AAF28E25264DBA002F629C /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		72AAF28F25264DBA002F629C /* stb_image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stb_image.cpp; sourceTree = "<group>"; };
 		72B2D216251B32AC00EF9D4E /* BabyRay */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BabyRay; sourceTree = BUILT_PRODUCTS_DIR; };
-		72B2D220251B32FD00EF9D4E /* GUIContext.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GUIContext.hpp; sourceTree = SOURCE_ROOT; };
-		72B2D221251B332C00EF9D4E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
-		72B2D223251B33C000EF9D4E /* ErrorHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ErrorHandler.cpp; path = OGL/ErrorHandler.cpp; sourceTree = SOURCE_ROOT; };
-		72B2D224251B33C000EF9D4E /* IndexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IndexBuffer.cpp; path = OGL/IndexBuffer.cpp; sourceTree = SOURCE_ROOT; };
-		72B2D225251B33C000EF9D4E /* VertexBuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VertexBuffer.hpp; path = OGL/VertexBuffer.hpp; sourceTree = SOURCE_ROOT; };
-		72B2D226251B33C000EF9D4E /* Renderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Renderer.hpp; path = OGL/Renderer.hpp; sourceTree = SOURCE_ROOT; };
-		72B2D227251B33C000EF9D4E /* VertexArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexArray.cpp; path = OGL/VertexArray.cpp; sourceTree = SOURCE_ROOT; };
-		72B2D228251B33C000EF9D4E /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Shader.cpp; path = OGL/Shader.cpp; sourceTree = SOURCE_ROOT; };
-		72B2D229251B33C000EF9D4E /* ErrorHandler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ErrorHandler.hpp; path = OGL/ErrorHandler.hpp; sourceTree = SOURCE_ROOT; };
-		72B2D22A251B33C000EF9D4E /* Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Renderer.cpp; path = OGL/Renderer.cpp; sourceTree = SOURCE_ROOT; };
-		72B2D22B251B33C000EF9D4E /* VertexArray.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VertexArray.hpp; path = OGL/VertexArray.hpp; sourceTree = SOURCE_ROOT; };
-		72B2D22C251B33C000EF9D4E /* Shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Shader.hpp; path = OGL/Shader.hpp; sourceTree = SOURCE_ROOT; };
-		72B2D22D251B33C000EF9D4E /* VertexBufferLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VertexBufferLayout.hpp; path = OGL/VertexBufferLayout.hpp; sourceTree = SOURCE_ROOT; };
-		72B2D22E251B33C000EF9D4E /* IndexBuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IndexBuffer.hpp; path = OGL/IndexBuffer.hpp; sourceTree = SOURCE_ROOT; };
-		72B2D22F251B33C000EF9D4E /* VertexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexBuffer.cpp; path = OGL/VertexBuffer.cpp; sourceTree = SOURCE_ROOT; };
-		72B2D237251B33E200EF9D4E /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = "glew-2.1.0/lib/libGLEW.a"; sourceTree = "<group>"; };
-		72B2D239251B33F900EF9D4E /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = "glfw/lib-macos/libglfw3.a"; sourceTree = "<group>"; };
+		72B2D220251B32FD00EF9D4E /* GUIContext.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GUIContext.hpp; path = BabyRay/GUIContext/GUIContext.hpp; sourceTree = SOURCE_ROOT; };
+		72B2D223251B33C000EF9D4E /* ErrorHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ErrorHandler.cpp; path = BabyRay/GUIContext/ErrorHandler.cpp; sourceTree = SOURCE_ROOT; };
+		72B2D224251B33C000EF9D4E /* IndexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IndexBuffer.cpp; path = BabyRay/GUIContext/IndexBuffer.cpp; sourceTree = SOURCE_ROOT; };
+		72B2D225251B33C000EF9D4E /* VertexBuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VertexBuffer.hpp; path = BabyRay/GUIContext/VertexBuffer.hpp; sourceTree = SOURCE_ROOT; };
+		72B2D226251B33C000EF9D4E /* Renderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Renderer.hpp; path = BabyRay/GUIContext/Renderer.hpp; sourceTree = SOURCE_ROOT; };
+		72B2D227251B33C000EF9D4E /* VertexArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexArray.cpp; path = BabyRay/GUIContext/VertexArray.cpp; sourceTree = SOURCE_ROOT; };
+		72B2D228251B33C000EF9D4E /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Shader.cpp; path = BabyRay/GUIContext/Shader.cpp; sourceTree = SOURCE_ROOT; };
+		72B2D229251B33C000EF9D4E /* ErrorHandler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ErrorHandler.hpp; path = BabyRay/GUIContext/ErrorHandler.hpp; sourceTree = SOURCE_ROOT; };
+		72B2D22A251B33C000EF9D4E /* Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Renderer.cpp; path = BabyRay/GUIContext/Renderer.cpp; sourceTree = SOURCE_ROOT; };
+		72B2D22B251B33C000EF9D4E /* VertexArray.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VertexArray.hpp; path = BabyRay/GUIContext/VertexArray.hpp; sourceTree = SOURCE_ROOT; };
+		72B2D22C251B33C000EF9D4E /* Shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Shader.hpp; path = BabyRay/GUIContext/Shader.hpp; sourceTree = SOURCE_ROOT; };
+		72B2D22D251B33C000EF9D4E /* VertexBufferLayout.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VertexBufferLayout.hpp; path = BabyRay/GUIContext/VertexBufferLayout.hpp; sourceTree = SOURCE_ROOT; };
+		72B2D22E251B33C000EF9D4E /* IndexBuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IndexBuffer.hpp; path = BabyRay/GUIContext/IndexBuffer.hpp; sourceTree = SOURCE_ROOT; };
+		72B2D22F251B33C000EF9D4E /* VertexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VertexBuffer.cpp; path = BabyRay/GUIContext/VertexBuffer.cpp; sourceTree = SOURCE_ROOT; };
 		72B2D23B251B340F00EF9D4E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		72B2D23D251B341300EF9D4E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		72B2D23F251B341B00EF9D4E /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		72B2D241251B342800EF9D4E /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		72B2D25C251B3BA600EF9D4E /* Shaders */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Shaders; sourceTree = SOURCE_ROOT; };
+		72B2D266251FC6B600EF9D4E /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = "SupportLibs/glew-2.1.0/lib/libGLEW.a"; sourceTree = "<group>"; };
+		72B2D268251FC6D600EF9D4E /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = "SupportLibs/glfw/lib-macos/libglfw3.a"; sourceTree = "<group>"; };
+		72B2D26C251FCAAC00EF9D4E /* Ray.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ray.shader; sourceTree = "<group>"; };
+		72B2D26D251FCC1400EF9D4E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +71,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B2D267251FC6C800EF9D4E /* libGLEW.a in Frameworks */,
 				72B2D23E251B341300EF9D4E /* Cocoa.framework in Frameworks */,
-				72B2D238251B33EE00EF9D4E /* libGLEW.a in Frameworks */,
-				72B2D23A251B340100EF9D4E /* libglfw3.a in Frameworks */,
 				72B2D240251B341B00EF9D4E /* IOKit.framework in Frameworks */,
 				72B2D23C251B340F00EF9D4E /* OpenGL.framework in Frameworks */,
 				72B2D242251B342800EF9D4E /* CoreVideo.framework in Frameworks */,
+				72B2D269251FC6E100EF9D4E /* libglfw3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +103,33 @@
 		72B2D218251B32AC00EF9D4E /* BabyRay */ = {
 			isa = PBXGroup;
 			children = (
-				72B2D25C251B3BA600EF9D4E /* Shaders */,
+				72B2D263251FC5AA00EF9D4E /* GUIContext */,
+				72B2D26B251FCA8C00EF9D4E /* Shaders */,
+				72B2D26D251FCC1400EF9D4E /* main.cpp */,
+			);
+			path = BabyRay;
+			sourceTree = "<group>";
+		};
+		72B2D236251B33E200EF9D4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72B2D268251FC6D600EF9D4E /* libglfw3.a */,
+				72B2D266251FC6B600EF9D4E /* libGLEW.a */,
+				72B2D241251B342800EF9D4E /* CoreVideo.framework */,
+				72B2D23F251B341B00EF9D4E /* IOKit.framework */,
+				72B2D23D251B341300EF9D4E /* Cocoa.framework */,
+				72B2D23B251B340F00EF9D4E /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72B2D263251FC5AA00EF9D4E /* GUIContext */ = {
+			isa = PBXGroup;
+			children = (
+				72AAF28F25264DBA002F629C /* stb_image.cpp */,
+				72AAF28E25264DBA002F629C /* stb_image.h */,
+				72AAF28B252645F9002F629C /* Texture.cpp */,
+				72AAF28C252645F9002F629C /* Texture.hpp */,
 				72B2D223251B33C000EF9D4E /* ErrorHandler.cpp */,
 				72B2D229251B33C000EF9D4E /* ErrorHandler.hpp */,
 				72B2D224251B33C000EF9D4E /* IndexBuffer.cpp */,
@@ -112,22 +144,16 @@
 				72B2D225251B33C000EF9D4E /* VertexBuffer.hpp */,
 				72B2D22D251B33C000EF9D4E /* VertexBufferLayout.hpp */,
 				72B2D220251B32FD00EF9D4E /* GUIContext.hpp */,
-				72B2D221251B332C00EF9D4E /* main.cpp */,
 			);
-			path = BabyRay;
+			path = GUIContext;
 			sourceTree = "<group>";
 		};
-		72B2D236251B33E200EF9D4E /* Frameworks */ = {
+		72B2D26B251FCA8C00EF9D4E /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				72B2D241251B342800EF9D4E /* CoreVideo.framework */,
-				72B2D23F251B341B00EF9D4E /* IOKit.framework */,
-				72B2D23D251B341300EF9D4E /* Cocoa.framework */,
-				72B2D23B251B340F00EF9D4E /* OpenGL.framework */,
-				72B2D239251B33F900EF9D4E /* libglfw3.a */,
-				72B2D237251B33E200EF9D4E /* libGLEW.a */,
+				72B2D26C251FCAAC00EF9D4E /* Ray.shader */,
 			);
-			name = Frameworks;
+			path = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,10 +215,12 @@
 			files = (
 				72B2D234251B33C000EF9D4E /* Renderer.cpp in Sources */,
 				72B2D235251B33C000EF9D4E /* VertexBuffer.cpp in Sources */,
-				72B2D222251B332C00EF9D4E /* main.cpp in Sources */,
 				72B2D232251B33C000EF9D4E /* VertexArray.cpp in Sources */,
 				72B2D230251B33C000EF9D4E /* ErrorHandler.cpp in Sources */,
 				72B2D231251B33C000EF9D4E /* IndexBuffer.cpp in Sources */,
+				72AAF28D252645F9002F629C /* Texture.cpp in Sources */,
+				72AAF29025264DBA002F629C /* stb_image.cpp in Sources */,
+				72B2D26F251FCC1400EF9D4E /* main.cpp in Sources */,
 				72B2D233251B33C000EF9D4E /* Shader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,14 +342,16 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/glew-2.1.0/include\"",
-					"\"$(SRCROOT)/glfw/include\"",
-					"\"$(SRCROOT)/glm\"",
+					"\"$(SRCROOT)/SupportLibs/glew-2.1.0/include\"",
+					"\"$(SRCROOT)/SupportLibs/glfw/include\"",
+					"\"$(SRCROOT)/SupportLibs/glm\"",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/glew-2.1.0/lib",
 					"$(PROJECT_DIR)/glfw/lib-macos",
+					"$(PROJECT_DIR)/SupportLibs/glew-2.1.0/lib",
+					"$(PROJECT_DIR)/SupportLibs/glfw/lib-macos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -332,14 +362,16 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/glew-2.1.0/include\"",
-					"\"$(SRCROOT)/glfw/include\"",
-					"\"$(SRCROOT)/glm\"",
+					"\"$(SRCROOT)/SupportLibs/glew-2.1.0/include\"",
+					"\"$(SRCROOT)/SupportLibs/glfw/include\"",
+					"\"$(SRCROOT)/SupportLibs/glm\"",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/glew-2.1.0/lib",
 					"$(PROJECT_DIR)/glfw/lib-macos",
+					"$(PROJECT_DIR)/SupportLibs/glew-2.1.0/lib",
+					"$(PROJECT_DIR)/SupportLibs/glfw/lib-macos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

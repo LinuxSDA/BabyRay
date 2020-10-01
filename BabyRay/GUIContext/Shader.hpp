@@ -11,8 +11,12 @@
 
 #include <string>
 #include <unordered_map>
+#include <deque>
+#include <map>
+
 #include "glm.hpp"
 #include "gtc/matrix_transform.hpp"
+#include "Texture.hpp"
 
 struct ShaderProgramSource {
     std::string VertexSource;
@@ -24,6 +28,8 @@ private:
     std::string mFilePath;
     unsigned int mRendererId;
     std::unordered_map<std::string, int> mUniformLocationCache;
+    std::deque<Texture> mTextures;
+    std::map<std::string, std::string> mTexturePathToUniform;
     
 public:
     Shader(const std::string& fileName);
@@ -32,6 +38,11 @@ public:
     void Bind() const;
     void Unbind() const;
 
+    void SetTexture(const std::string& mTexturePath, const std::string& mTextureUniform);
+
+    /* To be called for binding texture*/
+    void PrepareTexture();
+    
     void SetUniform1i(const std::string& name, int v0);
     void SetUniform1f(const std::string& name, float v0);
     void SetUniform2f(const std::string& name, float v0, float v1);

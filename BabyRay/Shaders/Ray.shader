@@ -2,23 +2,29 @@
 #version 330 core
 
 layout(location = 0) in vec4 position;
+layout(location = 1) in vec2 texCoord;
 
-out vec2 coord;
+out vec2 glCoord;
+out vec2 glTexCoord;
 
 void main()
 {
     gl_Position = position;
-    coord = vec2(position);
+    glCoord = vec2(position);
+    glTexCoord = texCoord;
+
 }
 
 #shader fragment
 #version 330 core
 
-in vec2 coord;
-uniform vec2 u_LightPos;
+in vec2 glCoord;
+in vec2 glTexCoord;
 
+uniform vec2        u_LightPos;
+uniform sampler2D   u_DiffuseTexture;
 
-layout(location = 0) out vec3 color;
+layout(location = 0) out vec3 glFragColor;
 
 bool LineLineIntersection(vec2 p1, vec2 p2, vec2 p3, vec2 p4)
 {
@@ -153,63 +159,30 @@ bool LineCircleIntersection(vec2 p1, vec2 p2, vec2 cp, float r) {
     return true;
 }
 
-
-bool CheckAllCircleLineIntersection(vec2 position, float circleRadius[5], vec2 centers[5])
-{
-    bool isIntersection = false;
-    
-    for(int index = 0; index < 5; index++)
-    {
-        isIntersection = isIntersection || LineCircleIntersection(position, coord, centers[index], circleRadius[index]);
-    }
-    
-    return isIntersection;
-}
-
-
 void main()
 {
     const float kc = 1.0f;
-    const float kl = 2.7f;
-    const float kq = 3.8f;
+    const float kl = 1.2f;
+    const float kq = 2.2f;
     
-    color = vec3(0.0, 0.0, 0.0);
+    glFragColor = vec3(0.0, 0.0, 0.0);
 
-    float circleRadius[5];
-    circleRadius[0] = 0.15f;
-    circleRadius[1] = 0.2f;
-    circleRadius[2] = 0.25f;
-    circleRadius[3] = 0.1f;
-    circleRadius[4] = 0.2f;
+    vec3 lightColor = vec3(1.0, 0.6, 0.4);
+    float circleRadius = 0.1f;
+    vec2 circleCenter = vec2(0.0f, 0.3f);
 
-    vec2 circleCenter[5];
-    circleCenter[0] = vec2(-0.6f, 0.8f);
-    circleCenter[1] = vec2(-0.3f, -0.3f);
-    circleCenter[2] = vec2(0.0f, 0.3f);
-    circleCenter[3] = vec2(0.6f, 0.7f);
-    circleCenter[4] = vec2(0.7f, -0.3f);
-
-    if(!CheckAllCircleLineIntersection(u_LightPos, circleRadius, circleCenter))
+    if(!LineCircleIntersection(u_LightPos, glCoord, circleCenter, circleRadius))
     {
-        float distance = length(coord - u_LightPos);
+        float distance = length(glCoord - u_LightPos);
         float attenuation = 1.0 / (kc + kl * distance + kq * (distance * distance));
-        color += vec3(1.0, 1.0, 0.0) * attenuation;
-    }
+        glFragColor += lightColor * vec3(texture(u_DiffuseTexture, glTexCoord)) * attenuation;
 
-    // Other lights
-    vec2 pos1 = vec2(0.8, 0.8);
-    if(!CheckAllCircleLineIntersection(pos1, circleRadius, circleCenter))
-    {
-        float distance = length(coord - pos1);
-        float attenuation = 1.0 / (kc + kl * distance + kq * (distance * distance));
-        color += vec3(0.0, 1.0, 1.0) * attenuation;
     }
     
-    vec2 pos2 = vec2(-0.8, -0.8);
-    if(!CheckAllCircleLineIntersection(pos2, circleRadius, circleCenter))
-    {
-        float distance = length(coord - pos2);
-        float attenuation = 1.0 / (kc + kl * distance + kq * (distance * distance));
-        color += vec3(0.3, 1.0, 0.1) * attenuation;
-    }
+    vec2 p = (glCoord - u_LightPos) / 0.04;
+    float r = sqrt(dot(p, p));
+    
+    if(r < 1)
+        glFragColor = lightColor * (1 - r + vec3(texture(u_DiffuseTexture, glTexCoord)));
+        
 }

@@ -16,7 +16,6 @@
 #include <string>
 #include <vector>
 
-
 class GLFWInitWindow
 {
 public:
@@ -69,7 +68,19 @@ public:
     std::pair<double, double> GetNormalizedCursorPosition()
     {
         auto cursor = GetCursorPosition();
-        return std::make_pair(((cursor.first/mScreenWidth) * 2) - 1, ((cursor.second/mScreenHeight) * -2) + 1);
+        cursor.first = ((cursor.first/mScreenWidth) * 2) - 1;
+        cursor.second = ((cursor.second/mScreenHeight) * -2) + 1;
+        
+        auto clamp = [](double value){
+            if (value > 1)
+                value = 1;
+            else if (value < -1)
+                value = -1;
+            
+            return value;
+        };
+        
+        return std::make_pair(clamp(cursor.first), clamp(cursor.second));
     }
 
     void SwapBuffersAndPollEvents()
