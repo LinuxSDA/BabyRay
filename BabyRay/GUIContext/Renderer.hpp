@@ -18,6 +18,7 @@ class Renderer
 public:
     void Clear() const;
     void EnableDepth(GLenum depthType) const;
+    void DisableDepth() const;
     void EnableBlend() const;
     void Draw(const VertexArray& va, const Shader& shader ) const;
 };

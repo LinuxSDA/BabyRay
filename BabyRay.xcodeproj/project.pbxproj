@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		72AAF28D252645F9002F629C /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72AAF28B252645F9002F629C /* Texture.cpp */; };
 		72AAF29025264DBA002F629C /* stb_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72AAF28F25264DBA002F629C /* stb_image.cpp */; };
+		72AAF29325273C51002F629C /* Framebuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72AAF29125273C51002F629C /* Framebuffer.cpp */; };
+		72AAF29625273C86002F629C /* FramebufferRenderHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72AAF29425273C86002F629C /* FramebufferRenderHelper.cpp */; };
 		72B2D230251B33C000EF9D4E /* ErrorHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B2D223251B33C000EF9D4E /* ErrorHandler.cpp */; };
 		72B2D231251B33C000EF9D4E /* IndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B2D224251B33C000EF9D4E /* IndexBuffer.cpp */; };
 		72B2D232251B33C000EF9D4E /* VertexArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72B2D227251B33C000EF9D4E /* VertexArray.cpp */; };
@@ -41,6 +43,12 @@
 		72AAF28C252645F9002F629C /* Texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
 		72AAF28E25264DBA002F629C /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
 		72AAF28F25264DBA002F629C /* stb_image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stb_image.cpp; sourceTree = "<group>"; };
+		72AAF29125273C51002F629C /* Framebuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Framebuffer.cpp; sourceTree = "<group>"; };
+		72AAF29225273C51002F629C /* Framebuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Framebuffer.hpp; sourceTree = "<group>"; };
+		72AAF29425273C86002F629C /* FramebufferRenderHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FramebufferRenderHelper.cpp; sourceTree = "<group>"; };
+		72AAF29525273C86002F629C /* FramebufferRenderHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FramebufferRenderHelper.hpp; sourceTree = "<group>"; };
+		72AAF29725273F2D002F629C /* Framebuffer.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Framebuffer.shader; sourceTree = "<group>"; };
+		72AAF29825290E2A002F629C /* Blur.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Blur.shader; sourceTree = "<group>"; };
 		72B2D216251B32AC00EF9D4E /* BabyRay */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BabyRay; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B2D220251B32FD00EF9D4E /* GUIContext.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GUIContext.hpp; path = BabyRay/GUIContext/GUIContext.hpp; sourceTree = SOURCE_ROOT; };
 		72B2D223251B33C000EF9D4E /* ErrorHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ErrorHandler.cpp; path = BabyRay/GUIContext/ErrorHandler.cpp; sourceTree = SOURCE_ROOT; };
@@ -126,6 +134,10 @@
 		72B2D263251FC5AA00EF9D4E /* GUIContext */ = {
 			isa = PBXGroup;
 			children = (
+				72AAF29425273C86002F629C /* FramebufferRenderHelper.cpp */,
+				72AAF29525273C86002F629C /* FramebufferRenderHelper.hpp */,
+				72AAF29125273C51002F629C /* Framebuffer.cpp */,
+				72AAF29225273C51002F629C /* Framebuffer.hpp */,
 				72AAF28F25264DBA002F629C /* stb_image.cpp */,
 				72AAF28E25264DBA002F629C /* stb_image.h */,
 				72AAF28B252645F9002F629C /* Texture.cpp */,
@@ -151,6 +163,8 @@
 		72B2D26B251FCA8C00EF9D4E /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				72AAF29825290E2A002F629C /* Blur.shader */,
+				72AAF29725273F2D002F629C /* Framebuffer.shader */,
 				72B2D26C251FCAAC00EF9D4E /* Ray.shader */,
 			);
 			path = Shaders;
@@ -218,8 +232,10 @@
 				72B2D232251B33C000EF9D4E /* VertexArray.cpp in Sources */,
 				72B2D230251B33C000EF9D4E /* ErrorHandler.cpp in Sources */,
 				72B2D231251B33C000EF9D4E /* IndexBuffer.cpp in Sources */,
+				72AAF29625273C86002F629C /* FramebufferRenderHelper.cpp in Sources */,
 				72AAF28D252645F9002F629C /* Texture.cpp in Sources */,
 				72AAF29025264DBA002F629C /* stb_image.cpp in Sources */,
+				72AAF29325273C51002F629C /* Framebuffer.cpp in Sources */,
 				72B2D26F251FCC1400EF9D4E /* main.cpp in Sources */,
 				72B2D233251B33C000EF9D4E /* Shader.cpp in Sources */,
 			);

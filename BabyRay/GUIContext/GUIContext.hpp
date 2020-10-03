@@ -69,7 +69,7 @@ public:
     {
         auto cursor = GetCursorPosition();
         cursor.first = ((cursor.first/mScreenWidth) * 2) - 1;
-        cursor.second = ((cursor.second/mScreenHeight) * -2) + 1;
+        cursor.second = ((cursor.second/mScreenHeight) * 2) - 1;
         
         auto clamp = [](double value){
             if (value > 1)
@@ -82,7 +82,12 @@ public:
         
         return std::make_pair(clamp(cursor.first), clamp(cursor.second));
     }
-
+    
+    void HideCursor()
+    {
+        glfwSetInputMode(mWindow, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+    }
+    
     void SwapBuffersAndPollEvents()
     {
         /* Swap front and back buffers */
@@ -91,7 +96,7 @@ public:
         /* Poll for and process events */
         glfwPollEvents();
     }
-    
+
     ~GLFWInitWindow()
     {
         glfwTerminate();

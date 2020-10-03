@@ -8,6 +8,10 @@
 
 #include "GUIContext/GUIContext.hpp"
 #include "gtc/matrix_transform.hpp"
+#include "FramebufferRenderHelper.hpp"
+
+
+/* TODO: Shader: I need to divide this by original texture to get only light*/
 
 int main(void)
 {
@@ -16,7 +20,8 @@ int main(void)
     const std::string WindowName = "Baby Ray";
     
     GLFWInitWindow window(ScreenWidth, ScreenHeight, WindowName);
-
+    window.HideCursor();
+    
     std::vector<float> positions {  -1.0,  1.0,
                                      1.0,  1.0,
                                      1.0, -1.0,
@@ -39,7 +44,13 @@ int main(void)
     Shader shader("/Users/sd/Documents/GitHub/BabyRay/BabyRay/Shaders/Ray.shader");
     shader.Bind();
     shader.SetTexture("/Users/sd/Documents/GitHub/BabyRay/BabyRay/Resources/wood.png", "u_DiffuseTexture");
-    shader.PrepareTexture();
+
+    Helper::FramebufferRenderer framebuffer(ScreenWidth, ScreenHeight);
+    Shader framebufferShader("/Users/sd/Documents/GitHub/BabyRay/BabyRay/Shaders/Framebuffer.shader");
+
+
+//    Helper::FramebufferRenderer framebufferBlur(ScreenWidth, ScreenHeight);
+//    Shader framebufferBlurShader("/Users/sd/Documents/GitHub/BabyRay/BabyRay/Shaders/Blur.shader");
 
     Renderer renderer;
     
@@ -48,9 +59,20 @@ int main(void)
     {
         renderer.Clear();
 
-        auto cursor = window.GetNormalizedCursorPosition();
-        shader.SetUniform2f("u_LightPos", cursor.first, cursor.second);
-        renderer.Draw(va, shader);
+        framebuffer.Bind();
+        {
+            shader.Bind();
+            auto cursor = window.GetNormalizedCursorPosition();
+            shader.SetUniform2f("u_LightPos", cursor.first, -cursor.second);
+            renderer.Draw(va, shader);
+        }
+        framebuffer.Unbind();
+
+//        framebufferBlur.Bind();
+        framebuffer.Draw(renderer, framebufferShader);
+//        framebufferBlur.Unbind();
+//        framebufferBlur.Draw(renderer, framebufferBlurShader);
+        
         window.SwapBuffersAndPollEvents();
     }
     

@@ -39,10 +39,6 @@ public:
     void Unbind() const;
 
     void SetTexture(const std::string& mTexturePath, const std::string& mTextureUniform);
-
-    /* To be called for binding texture*/
-    void PrepareTexture();
-    
     void SetUniform1i(const std::string& name, int v0);
     void SetUniform1f(const std::string& name, float v0);
     void SetUniform2f(const std::string& name, float v0, float v1);
@@ -55,7 +51,12 @@ private:
     ShaderProgramSource ParseShader(const std::string& filePath);
     unsigned int CompileShader(unsigned int type, const std::string& source);
     unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader);
-    
+
+    /* To be called for binding texture*/
+    void PrepareTexture() const;
+    void SetUniform1i(const std::string& name, int v0) const;
+    int GetUniformLocation(const std::string& name) const;
     int GetUniformLocation(const std::string& name);
+    int SetUniformLocation(const std::string& name);
 };
 #endif /* Shader_hpp */

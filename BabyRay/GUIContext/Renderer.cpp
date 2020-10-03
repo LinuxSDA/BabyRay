@@ -25,6 +25,11 @@ void Renderer::EnableDepth(GLenum depthType) const
     GLCall(glDepthFunc(depthType));
 }
 
+void Renderer::DisableDepth() const
+{
+    GLCall(glDisable(GL_DEPTH_TEST));
+}
+
 void Renderer::EnableBlend() const
 {
     GLCall(glEnable(GL_BLEND));
