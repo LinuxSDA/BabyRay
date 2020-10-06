@@ -47,8 +47,6 @@
 		72AAF29225273C51002F629C /* Framebuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Framebuffer.hpp; sourceTree = "<group>"; };
 		72AAF29425273C86002F629C /* FramebufferRenderHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FramebufferRenderHelper.cpp; sourceTree = "<group>"; };
 		72AAF29525273C86002F629C /* FramebufferRenderHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FramebufferRenderHelper.hpp; sourceTree = "<group>"; };
-		72AAF29725273F2D002F629C /* Framebuffer.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Framebuffer.shader; sourceTree = "<group>"; };
-		72AAF29825290E2A002F629C /* Blur.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Blur.shader; sourceTree = "<group>"; };
 		72B2D216251B32AC00EF9D4E /* BabyRay */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BabyRay; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B2D220251B32FD00EF9D4E /* GUIContext.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GUIContext.hpp; path = BabyRay/GUIContext/GUIContext.hpp; sourceTree = SOURCE_ROOT; };
 		72B2D223251B33C000EF9D4E /* ErrorHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ErrorHandler.cpp; path = BabyRay/GUIContext/ErrorHandler.cpp; sourceTree = SOURCE_ROOT; };
@@ -70,7 +68,7 @@
 		72B2D241251B342800EF9D4E /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		72B2D266251FC6B600EF9D4E /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = "SupportLibs/glew-2.1.0/lib/libGLEW.a"; sourceTree = "<group>"; };
 		72B2D268251FC6D600EF9D4E /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = "SupportLibs/glfw/lib-macos/libglfw3.a"; sourceTree = "<group>"; };
-		72B2D26C251FCAAC00EF9D4E /* Ray.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ray.shader; sourceTree = "<group>"; };
+		72B2D26C251FCAAC00EF9D4E /* Ray.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ray.shader; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
 		72B2D26D251FCC1400EF9D4E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,8 +161,6 @@
 		72B2D26B251FCA8C00EF9D4E /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				72AAF29825290E2A002F629C /* Blur.shader */,
-				72AAF29725273F2D002F629C /* Framebuffer.shader */,
 				72B2D26C251FCAAC00EF9D4E /* Ray.shader */,
 			);
 			path = Shaders;
