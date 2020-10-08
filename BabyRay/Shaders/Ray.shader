@@ -35,7 +35,7 @@ struct Line
 const float eps = 1e-6;
 const int numRays = 5;
 const int numWalls = 4;
-const int numCircles = 5;
+const int numCircles = 3;
 const int numLights = 3;
 
 // Since this is GPU code I'm not checking for nulls
@@ -164,7 +164,7 @@ void main()
 
     vec3 lightColor[numLights];
     lightColor[0] = vec3(1.0, 1.0, 0.0);
-    lightColor[1] = vec3(0.0, 1.0, 0.0);
+    lightColor[1] = vec3(0.2, 0.6, 0.2);
     lightColor[2] = vec3(1.0, 0.0, 0.0);
 
     vec2 lightPosition[numLights];
@@ -191,15 +191,15 @@ void main()
     circleRadius[0] = 0.10f;
     circleRadius[1] = 0.25f;
     circleRadius[2] = 0.20f;
-    circleRadius[3] = 0.15f;
-    circleRadius[4] = 0.30f;
+//    circleRadius[3] = 0.15f;
+//    circleRadius[4] = 0.30f;
 
     vec2 circleCenter[numCircles];
     circleCenter[0] = vec2(0.5f, 0.0f);
     circleCenter[1] = vec2(-0.5f, -0.4f);
     circleCenter[2] = vec2(0.0f, 0.4f);
-    circleCenter[3] = vec2(0.3f, -0.6f);
-    circleCenter[4] = vec2(-0.6f, 0.3f);
+//    circleCenter[3] = vec2(0.3f, -0.6f);
+//    circleCenter[4] = vec2(-0.6f, 0.3f);
 
     glFragColor = vec3(0.0f, 0.0f, 0.0f);
 

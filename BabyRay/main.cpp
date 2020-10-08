@@ -55,8 +55,8 @@ int main(void)
     va.CreateVBuffer2f(uv);
     
     Shader shader("/Users/sd/Documents/GitHub/BabyRay/BabyRay/Shaders/Ray.shader");
-    shader.SetTexture("/Users/sd/Documents/GitHub/BabyRay/BabyRay/Resources/wood.png", "u_DiffuseTexture");
-
+    shader.SetTexture("/Users/sd/Documents/GitHub/BabyRay/BabyRay/Resources/Stone.jpg", "u_DiffuseTexture");
+    
     Renderer renderer;
     
     /* Loop until the user closes the window */
@@ -69,7 +69,7 @@ int main(void)
         auto cursor = window.GetNormalizedCursorPosition();
         shader.SetUniform2f("u_LightPos", cursor.first, -cursor.second);
         renderer.Draw(va, shader);
-    
+
         window.SwapBuffersAndPollEvents();
     }
     
