@@ -3,9 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>BuildLocationStyle</key>
-	<string>UseAppPreferences</string>
+	<string>CustomLocation</string>
+	<key>CustomBuildIntermediatesPath</key>
+	<string>intermediate</string>
 	<key>CustomBuildLocationType</key>
-	<string>RelativeToDerivedData</string>
+	<string>RelativeToWorkspace</string>
+	<key>CustomBuildProductsPath</key>
+	<string>bin</string>
 	<key>DerivedDataLocationStyle</key>
 	<string>Default</string>
 	<key>IssueFilterStyle</key>

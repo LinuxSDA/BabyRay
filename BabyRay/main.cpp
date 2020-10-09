@@ -54,8 +54,8 @@ int main(void)
     va.CreateIBuffer(indices);
     va.CreateVBuffer2f(uv);
     
-    Shader shader("/Users/sd/Documents/GitHub/BabyRay/BabyRay/Shaders/Ray.shader");
-    shader.SetTexture("/Users/sd/Documents/GitHub/BabyRay/BabyRay/Resources/Stone.jpg", "u_DiffuseTexture");
+    Shader shader("../../BabyRay/Shaders/Ray.shader");
+    shader.SetTexture("../../BabyRay/Resources/Stone.jpg", "u_DiffuseTexture");
     
     Renderer renderer;
     
