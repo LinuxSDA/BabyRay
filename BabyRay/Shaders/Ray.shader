@@ -159,8 +159,8 @@ bool RayCirclesIntersection(in Line ray, in vec2 circleCenter[numCircles], in fl
 void main()
 {
     const float kc = 1.0f;
-    const float kl = 2.2f;
-    const float kq = 3.2f;
+    const float kl = 1.2f;
+    const float kq = 2.2f;
 
     vec3 lightColor[numLights];
     lightColor[0] = vec3(1.0, 1.0, 0.0);
@@ -248,7 +248,7 @@ void main()
                 {
                     float distance = length(bounceRay.endPoint - glCoord);
                     float attenuation = 1.0 / (kc + kl * distance + kq * (distance * distance));
-                    glFragColor += color * vec3(texture(u_DiffuseTexture, glTexCoord)) * attenuation * 0.1 * numRays;
+                    glFragColor += color * vec3(texture(u_DiffuseTexture, glTexCoord)) * attenuation/numRays;
                 }
             }
         }
