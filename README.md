@@ -1,6 +1,6 @@
 # BabyRay
 
-BabyRay is example of openGL 2D ray tracing. It was inspired from [here](https://www.taylorpetrick.com/blog/post/2d-ray-tracing).
+BabyRay is an example of openGl 2D ray tracing. It was inspired from [here](https://www.taylorpetrick.com/blog/post/2d-ray-tracing).
 
 Since this is just a learning project, performance isn't great and support is limited to circle-ray and line-ray interactions. 
 
